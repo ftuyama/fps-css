@@ -9,11 +9,14 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+var config = require('./config/config');
 
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'html');
 app.use(express.static(__dirname + '/public/images'));
+app.use(express.static(__dirname + '/public/javascripts'));
+app.use(express.static(__dirname + '/public/stylesheets'));
 app.use(express.static(__dirname + '/views'));
 
 // uncomment after placing your favicon in /public
@@ -37,26 +40,26 @@ app.use(function(req, res, next) {
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // Server
-var server = app.listen(8080, function() {
+var server = app.listen(config.web.port, function() {
     var port = server.address().port
     console.log("App listening at port %s", port)
 })
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
