@@ -17,10 +17,12 @@ h2 {
     margin: 0 0 1em 0
 }
 
-h3 {
-    font-size: 150%;
-    color: #fff;
-    margin: 0em 0 .25em 0
+@media screen and (min-width: 60em) {
+    h3 {
+        font-size: 150%;
+        color: #fff;
+        margin: 0em 0 .25em 0
+    }
 }
 
 a {
@@ -51,22 +53,24 @@ kbd {
     background: #000
 }
 
-#gun {
-    background: url("../gun.png");
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: 5vmin;
-    z-index: 2000;
-    height: 315px;
-    width: 360px;
-    height: 40vmin;
-    width: 40vmin;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: 50% 100%;
-    z-index: 1;
-    animation: gun 2.5s infinite
+@media screen and (min-width: 60em) {
+    #gun {
+        background: url("../gun.png");
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: 5vmin;
+        z-index: 2000;
+        height: 315px;
+        width: 360px;
+        height: 40vmin;
+        width: 40vmin;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+        z-index: 1;
+        animation: gun 2.5s infinite
+    }
 }
 
 #viewport {
@@ -86,27 +90,28 @@ kbd {
     z-index: 3
 }
 
-#loading {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    color: #ccc;
-    font-size: 120%;
-    z-index: 4
-}
-
-#instructions {
-    border-spacing: 50px;
-    width: 100%;
-    display: table;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    z-index: 2;
-    transition: .5s
+@media screen and (min-width: 60em) {
+    #loading {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #ccc;
+        font-size: 120%;
+        z-index: 4
+    }
+    #instructions {
+        border-spacing: 50px;
+        width: 100%;
+        display: table;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 2;
+        transition: .5s
+    }
 }
 
 .panel {
@@ -134,14 +139,50 @@ kbd {
     opacity: 0
 }
 
-@keyframes gun {
-    50% {
-        transform: translate(.5%, .9%)scale(0.99)
+@media screen and (min-width: 60em) {
+    @keyframes gun {
+        50% {
+            transform: translate(.5%, .9%)scale(0.99)
+        }
     }
 }
 
 @media screen and (max-width: 60em) {
     html {
         font-size: 60%
+    }
+    #loading {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #ccc;
+        font-size: 120%
+    }
+    .joystick {
+        position: absolute !important;
+        bottom: 1em;
+        right: 1em;
+        bottom: 5vmin;
+        right: 5vmin;
+        z-index: 100
+    }
+    .joystick+.joystick {
+        right: auto;
+        left: 1em;
+        left: 5vmin
+    }
+    #instructions {
+        border-spacing: 50px;
+        width: 100%;
+        display: table;
+        position: absolute;
+        text-align: center;
+        top: 20%;
+        height: 50%;
+        z-index: 2;
+        -moz-transition: .5s;
+        -webkit-transition: .5s;
+        transition: .5s
     }
 }
