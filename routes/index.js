@@ -6,9 +6,8 @@ var fs = require("fs");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var page = fs.readFileSync(config.isCallerMobile(req) ?
-        "views/game-M.html" : "views/game.html", "utf8");
-    res.send(mustache.to_html(page));
+    var page = fs.readFileSync("views/game.html", "utf8");
+    res.send(mustache.render(page, { mobile: config.isCallerMobile(req) }));
 });
 
 module.exports = router;

@@ -41,7 +41,11 @@
     <script>
         document.getElementById("loading").innerHTML = "Loading...";
     </script>
+    {{#mobile}}
+    <script src="/game-engine-M.js"></script>
+    {{/mobile}} {{^mobile}}
     <script src="/game-engine.js"></script>
+    {{/mobile}}
 </body>
 
 </html>
