@@ -71,6 +71,24 @@ kbd {
         z-index: 1;
         animation: gun 2.5s infinite
     }
+    #explosion {
+        background: url("../explosion.png");
+        position: absolute;
+        bottom: 12%;
+        left: 47%;
+        margin-left: 5vmin;
+        z-index: 2000;
+        height: 315px;
+        width: 360px;
+        height: 40vmin;
+        width: 40vmin;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+        display: none;
+        z-index: 1;
+        animation: gun 2.5s infinite
+    }
 }
 
 #viewport {

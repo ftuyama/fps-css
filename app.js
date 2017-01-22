@@ -34,6 +34,7 @@ app.use(express.static(__dirname + '/core'));
 app.use(express.static(__dirname + '/public/images'));
 app.use(express.static(__dirname + '/public/javascripts'));
 app.use(express.static(__dirname + '/public/stylesheets'));
+app.use(express.static(__dirname + '/public/sounds'));
 app.use(express.static(__dirname + '/routes'));
 app.use(express.static(__dirname + '/views'));
 

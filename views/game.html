@@ -36,14 +36,17 @@
         </div>
     </div>
     <div id="viewport" class="hide">
+        <div id="explosion"></div>
         <div id="gun"></div>
     </div>
     <script>
         document.getElementById("loading").innerHTML = "Loading...";
     </script>
+    <script src="/jquery.min.js"></script>
     {{#mobile}}
     <script src="/game-engine-M.js"></script>
     {{/mobile}} {{^mobile}}
+    <script src="/control.js"></script>
     <script src="/game-engine.js"></script>
     {{/mobile}}
 </body>
